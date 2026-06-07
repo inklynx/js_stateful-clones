@@ -29,6 +29,9 @@ function transformStateWithClones(state, actions) {
           delete newState[key];
         }
         break;
+
+      default:
+        throw new Error(`Unsupported action.type: ${action.type}`);
     }
 
     result.push(newState);
